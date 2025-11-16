@@ -1,0 +1,340 @@
+// ===================================
+// Example 1: Hello World
+// ===================================
+
+spill "Hello World, fr fr!"
+
+
+// ===================================
+// Example 2: Variables and Types
+// ===================================
+
+vibe age is 25
+rizz username is "SigmaSteve"
+sigma is_cool is nocap
+vibe count is nada
+
+spill "Username: "
+spill username
+spill "Age: "
+spill age
+
+
+// ===================================
+// Example 3: Simple Conditionals
+// ===================================
+
+vibe score is 85
+
+chat score over_or_is 90?
+    spill "Grade A - You're bussin!"
+otherwise
+    chat score over_or_is 80?
+        spill "Grade B - Pretty good, no cap"
+    otherwise
+        spill "You need to study more"
+    periodt
+periodt
+
+
+// ===================================
+// Example 4: While Loops
+// ===================================
+
+vibe counter is nada
+
+bussin counter under 5?
+    spill "Counter: "
+    spill counter
+    counter is counter + 1
+periodt
+
+spill "Loop done!"
+
+
+// ===================================
+// Example 5: Loop with Break and Continue
+// ===================================
+
+vibe i is nada
+
+bussin i under 10?
+    i is i + 1
+    
+    chat i is 3?
+        spill "Skipping 3, it's mid"
+        slaps
+    periodt
+    
+    chat i is 7?
+        spill "Lucky number 7, we done here"
+        mid
+    periodt
+    
+    spill i
+periodt
+
+
+// ===================================
+// Example 6: Functions
+// ===================================
+
+side_quest greet(rizz name)?
+    spill "Yo, "
+    spill name
+    spill "! What's good?"
+    bounce ghost
+periodt
+
+greet("Chad")
+greet("Stacy")
+
+
+// ===================================
+// Example 7: Function with Return Value
+// ===================================
+
+side_quest add(vibe a, vibe b)?
+    vibe result is a + b
+    bounce result
+periodt
+
+side_quest multiply(vibe x, vibe y)?
+    bounce x * y
+periodt
+
+vibe sum is add(5, 3)
+vibe product is multiply(4, 7)
+
+spill "Sum: "
+spill sum
+spill "Product: "
+spill product
+
+
+// ===================================
+// Example 8: Factorial Function
+// ===================================
+
+side_quest factorial(vibe n)?
+    chat n under_or_is 1?
+        bounce 1
+    periodt
+    
+    bounce n * factorial(n - 1)
+periodt
+
+vibe fact5 is factorial(5)
+spill "5! = "
+spill fact5
+
+
+// ===================================
+// Example 9: FizzBuzz
+// ===================================
+
+vibe num is 1
+
+bussin num under_or_is 15?
+    chat num % 15 is nada?
+        spill "FizzBuzz"
+    otherwise
+        chat num % 3 is nada?
+            spill "Fizz"
+        otherwise
+            chat num % 5 is nada?
+                spill "Buzz"
+            otherwise
+                spill num
+            periodt
+        periodt
+    periodt
+    
+    num is num + 1
+periodt
+
+
+// ===================================
+// Example 10: Error Handling
+// ===================================
+
+side_quest divide(vibe a, vibe b)?
+    chat b is nada?
+        yeet "Cannot divide by zero, that's cap!"
+    periodt
+    
+    bounce a / b
+periodt
+
+side_quest safe_divide(vibe x, vibe y)?
+    bet
+        vibe result is divide(x, y)
+        spill "Result: "
+        spill result
+    cringe
+        spill "Error: Division failed, cringe"
+    periodt
+periodt
+
+safe_divide(10, 2)
+safe_divide(10, 0)
+
+
+// ===================================
+// Example 11: Game Simulation
+// ===================================
+
+rizz player_name is "Sigma Steve"
+vibe player_hp is 100
+vibe player_score is nada
+sigma is_alive is nocap
+
+side_quest take_damage(vibe damage)?
+    chat damage under nada?
+        yeet "Damage cannot be negative, fr fr"
+    periodt
+    
+    player_hp is player_hp - damage
+    spill player_name
+    spill " took "
+    spill damage
+    spill " damage. HP: "
+    spill player_hp
+    
+    chat player_hp under_or_is nada?
+        player_hp is nada
+        is_alive is cap
+        spill "Game Over - You took an L"
+        bounce cap
+    periodt
+    
+    bounce nocap
+periodt
+
+side_quest add_score(vibe points)?
+    player_score is player_score + points
+    spill "Score: "
+    spill player_score
+periodt
+
+// Game loop
+vibe round is 1
+
+bussin is_alive is nocap?
+    spill "Round "
+    spill round
+    
+    bet
+        sigma alive is take_damage(25)
+        add_score(100)
+        
+        chat alive is cap?
+            mid
+        periodt
+    cringe
+        spill "Error in game logic, that's cringe"
+        mid
+    periodt
+    
+    round is round + 1
+    
+    chat round over 3?
+        spill "You survived 3 rounds, you're bussin!"
+        mid
+    periodt
+periodt
+
+spill "Final score: "
+spill player_score
+
+
+// ===================================
+// Example 12: Nested Loops (Multiplication Table)
+// ===================================
+
+vibe row is 1
+
+bussin row under_or_is 5?
+    vibe col is 1
+    
+    bussin col under_or_is 5?
+        vibe result is row * col
+        spill result
+        spill " "
+        col is col + 1
+    periodt
+    
+    spill ""
+    row is row + 1
+periodt
+
+
+// ===================================
+// Example 13: Prime Number Checker
+// ===================================
+
+side_quest is_prime(vibe n)?
+    chat n under_or_is 1?
+        bounce cap
+    periodt
+    
+    vibe i is 2
+    
+    bussin i * i under_or_is n?
+        chat n % i is nada?
+            bounce cap
+        periodt
+        i is i + 1
+    periodt
+    
+    bounce nocap
+periodt
+
+vibe test_num is 17
+
+chat is_prime(test_num) is nocap?
+    spill test_num
+    spill " is prime, no cap!"
+otherwise
+    spill test_num
+    spill " is not prime, that's cap"
+periodt
+
+
+// ===================================
+// Example 14: Max Function
+// ===================================
+
+side_quest max(vibe a, vibe b)?
+    chat a over b?
+        bounce a
+    periodt
+    bounce b
+periodt
+
+side_quest max_three(vibe x, vibe y, vibe z)?
+    vibe temp is max(x, y)
+    bounce max(temp, z)
+periodt
+
+vibe biggest is max_three(42, 17, 99)
+spill "Biggest number: "
+spill biggest
+
+
+// ===================================
+// Example 15: String Comparison
+// ===================================
+
+rizz password is "sigma123"
+rizz input is "sigma123"
+
+chat input is password?
+    spill "Access granted, you're in!"
+otherwise
+    spill "Wrong password, that's cap"
+periodt
+
+chat input aint password?
+    spill "Try again"
+periodt

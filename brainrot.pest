@@ -1,0 +1,127 @@
+// Brainrot Language Grammar
+
+program = { SOI ~ statement* ~ EOI }
+
+statement = {
+    variable_declaration
+  | assignment
+  | if_statement
+  | while_loop
+  | function_declaration
+  | try_catch
+  | function_call
+  | print_statement
+  | return_statement
+  | throw_statement
+  | break_statement
+  | continue_statement
+}
+
+// Variable Declaration: "vibe x is 5"
+variable_declaration = { type_keyword ~ identifier ~ "is" ~ expression }
+
+// Assignment: "x is 10"
+assignment = { identifier ~ "is" ~ expression }
+
+// If statement: "chat condition? ... periodt" with optional "otherwise"
+if_statement = {
+    "chat" ~ expression ~ "?"? ~ 
+    statement* ~ 
+    ("otherwise" ~ statement*)? ~ 
+    "periodt"
+}
+
+// While loop: "bussin condition? ... periodt"
+while_loop = { "bussin" ~ expression ~ "?"? ~ statement* ~ "periodt" }
+
+// Function declaration: "side_quest name(params)? ... periodt"
+function_declaration = {
+    "side_quest" ~ identifier ~ "(" ~ parameter_list? ~ ")" ~ "?"? ~
+    statement* ~
+    "periodt"
+}
+
+// Try-catch: "bet ... cringe ... periodt"
+try_catch = {
+    "bet" ~ 
+    statement* ~
+    "cringe" ~
+    statement* ~
+    "periodt"
+}
+
+// Function call: "func_name(args)"
+function_call = { identifier ~ "(" ~ argument_list? ~ ")" }
+
+// Print statement: "spill expr"
+print_statement = { "spill" ~ expression }
+
+// Return statement: "bounce expr"
+return_statement = { "bounce" ~ expression }
+
+// Throw statement: "yeet expr"
+throw_statement = { "yeet" ~ expression }
+
+// Break: "mid"
+break_statement = { "mid" }
+
+// Continue: "slaps"
+continue_statement = { "slaps" }
+
+// Parameters
+parameter_list = { parameter ~ ("," ~ parameter)* }
+parameter = { type_keyword ~ identifier }
+
+// Arguments
+argument_list = { expression ~ ("," ~ expression)* }
+
+// Expressions
+expression = { comparison }
+
+comparison = { additive ~ (comparison_op ~ additive)* }
+
+comparison_op = { 
+    "is" 
+  | "aint" 
+  | "isnt"
+  | "over_or_is" 
+  | "under_or_is" 
+  | "over" 
+  | "under"
+  | ">=" 
+  | "<=" 
+  | ">" 
+  | "<"
+  | "!="
+}
+
+additive = { multiplicative ~ (("+" | "-") ~ multiplicative)* }
+multiplicative = { primary ~ (("*" | "/" | "%") ~ primary)* }
+
+primary = {
+    number
+  | string
+  | boolean
+  | ghost_literal
+  | nada_literal
+  | identifier
+  | function_call_expr
+  | "(" ~ expression ~ ")"
+}
+
+function_call_expr = { identifier ~ "(" ~ argument_list? ~ ")" }
+
+// Types
+type_keyword = { "vibe" | "rizz" | "sigma" | "ghost" }
+
+// Literals
+number = @{ "-"? ~ ASCII_DIGIT+ ~ ("." ~ ASCII_DIGIT+)? }
+string = @{ "\"" ~ (!"\"" ~ ANY)* ~ "\"" }
+boolean = { "cap" | "nocap" }
+ghost_literal = { "ghost" }
+nada_literal = { "nada" }
+identifier = @{ ASCII_ALPHA ~ (ASCII_ALPHANUMERIC | "_")* }
+
+// Whitespace and comments (? treated as whitespace for readability)
+WHITESPACE = _{ " " | "\t" | "\n" | "\r" | "?" }
+COMMENT = _{ "//" ~ (!"\n" ~ ANY)* }
