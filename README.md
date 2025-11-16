@@ -24,7 +24,7 @@ Brainrot is a meme-inspired programming language with BASIC-like syntax but with
 
 #### Control Flow
 - `chat` - if statement (like "if we're being real...")
-- `otherwise` - else
+- `whatever` - else
 - `bussin` - while loop (keep going while it's bussin/good)
 - `periodt` - block terminator (ends if/while/function blocks)
 - `?` - optional readability marker (treated as whitespace)
@@ -67,7 +67,7 @@ rizz username is "SigmaSteve"
 
 chat age over 21?
     spill "You can drink, no cap"
-otherwise
+whatever
     spill "Too young, that's cap"
 periodt
 ```
@@ -123,13 +123,13 @@ vibe num is 1
 bussin num under_or_is 100?
     chat num % 15 is nada?
         spill "FizzBuzz"
-    otherwise
+    whatever
         chat num % 3 is nada?
             spill "Fizz"
-        otherwise
+        whatever
             chat num % 5 is nada?
                 spill "Buzz"
-            otherwise
+            whatever
                 spill num
             periodt
         periodt

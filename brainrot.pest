@@ -23,11 +23,11 @@ variable_declaration = { type_keyword ~ identifier ~ "is" ~ expression }
 // Assignment: "x is 10"
 assignment = { identifier ~ "is" ~ expression }
 
-// If statement: "chat condition? ... periodt" with optional "otherwise"
+// If statement: "chat condition? ... periodt" with optional "whatever"
 if_statement = {
     "chat" ~ expression ~ "?"? ~ 
     statement* ~ 
-    ("otherwise" ~ statement*)? ~ 
+    ("whatever" ~ statement*)? ~ 
     "periodt"
 }
 

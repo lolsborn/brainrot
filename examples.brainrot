@@ -28,10 +28,10 @@ vibe score is 85
 
 chat score over_or_is 90?
     spill "Grade A - You're bussin!"
-otherwise
+whatever
     chat score over_or_is 80?
         spill "Grade B - Pretty good, no cap"
-    otherwise
+    whatever
         spill "You need to study more"
     periodt
 periodt
@@ -138,13 +138,13 @@ vibe num is 1
 bussin num under_or_is 15?
     chat num % 15 is nada?
         spill "FizzBuzz"
-    otherwise
+    whatever
         chat num % 3 is nada?
             spill "Fizz"
-        otherwise
+        whatever
             chat num % 5 is nada?
                 spill "Buzz"
-            otherwise
+            whatever
                 spill num
             periodt
         periodt
@@ -295,7 +295,7 @@ vibe test_num is 17
 chat is_prime(test_num) is nocap?
     spill test_num
     spill " is prime, no cap!"
-otherwise
+whatever
     spill test_num
     spill " is not prime, that's cap"
 periodt
@@ -331,7 +331,7 @@ rizz input is "sigma123"
 
 chat input is password?
     spill "Access granted, you're in!"
-otherwise
+whatever
     spill "Wrong password, that's cap"
 periodt
 
